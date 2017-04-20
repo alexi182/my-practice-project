@@ -3,44 +3,44 @@ import { autobind } from 'core-decorators';
 @autobind()
 
 export default class Help extends React.Component {
-   constructor(props) {
-      super(props);
+    constructor(props) {
+        super(props);
 
-      this.name = "Will";
-      this.count = "300";
+        this.name = "Will";
+        this.count = "300";
 
-      this.state = {
-         text: this.props.text,
-         count: this.count
-      };
-   }
+        this.state = {
+            text: this.props.text,
+            count: this.count
+        };
+    }
 
-   handleChange(e) {
-      this.setState({
-         text: e.target.value,
-         count: this.count - e.target.value.length
-      });
-   }
+    handleChange(e) {
+        this.setState({
+            text: e.target.value,
+            count: this.count - e.target.value.length
+        });
+    }
 
-   render() {
-      console.log(this.props);
-      return (
-          <div className="help-content">
-             <h2>Раздел помощи</h2>
+    render() {
+        console.log(this.props);
+        return (
+            <div className="help-content">
+                <h2>Раздел помощи</h2>
 
-             <textarea placeholder="Текст сообщения" className="form-control" value={this.state.text} onChange={this.handleChange} />
+                <textarea placeholder="Текст сообщения" className="form-control" value={this.state.text} onChange={this.handleChange} />
 
-             <div className="count-remains">
-                Максимальное число символов:{this.state.count}
-             </div>
+                <div className="count-remains">
+                    Максимальное число символов:{this.state.count}
+                </div>
 
-             <div>
-                <p>Текст: {this.state.text}</p>
-                <p>Имя: {this.name}</p>
-                <input type="text"/>
-             </div>
-          </div>
-      );
-   }
+                <div>
+                    <p>Текст: {this.state.text}</p>
+                    <p>Имя: {this.name}</p>
+                    <input type="text" />
+                </div>
+            </div>
+        );
+    }
 
 }
