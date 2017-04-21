@@ -1,5 +1,10 @@
 /*
+@import "global/color";
+@import "global/variables";
 @import "./common.scss";
-@import "./fonts.scss";*/
+@import "./header.scss";
+@import "./footer.scss";
+@import "./fonts.scss";
+*/
 
 /*# sourceMappingURL=style.css.map */

@@ -18,6 +18,9 @@ export default class Menu extends React.Component {
              <li>
                 <Link to="/help" class="menu-link">Help</Link>
              </li>
+             <li>
+                <Link to="/bla" class="menu-link">Bla</Link>
+             </li>
           </ul>
       );
    }

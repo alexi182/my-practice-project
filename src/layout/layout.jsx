@@ -6,11 +6,28 @@ export default class Layout extends React.Component {
       super(props)
    }
 
+   back() {
+      this.props.router.goBack();
+   }
+
+   forward() {
+      this.props.router.goForward();
+   }
+
+
    render() {
       const title = 'Hi!';
 
       return (
           <div className="page-inner">
+
+             <div>
+                <button type="button" onClick={this.back}>Go Back</button>
+             </div>
+             <div>
+                <button type="button" onClick={this.forward}>Go Forward</button>
+             </div>
+
              <Header header={title} />
              <div className="content container">
                 {this.props.children}
