@@ -1,0 +1,27 @@
+a {
+   color: white;
+}
+
+a:hover {
+   color: blue!important;
+   background: grey!important;
+}
+
+.active {
+   color: blue;
+   background: grey;
+}
+
+.header {
+   background-color: #222;
+   a{
+      color: #fff;
+   }
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+   text-decoration: none;
+   background-color: transparent;
+   color: #fff;
+}
