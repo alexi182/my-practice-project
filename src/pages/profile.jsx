@@ -1,3 +1,5 @@
+import {Link} from 'react-router';
+
 const data = [
    {
       "id": 1,
@@ -29,20 +31,42 @@ const data = [
 export default class Profile extends React.Component {
    constructor(props) {
       super(props)
+
+      this.state = {
+         users: [1,2,3,4,5,6,7,8,9]
+      };
    }
 
    render() {
+      if (this.props.children) {
+         return (
+             <div>
+                {this.props.children}
+             </div>
+         )}
+
+
+      let users = this.state.users.map((user, index) =>
+         <div>
+            {/*<Link to={ `/profile/${index}` } > Go to user {index}</Link>*/}
+            <Link to={{pathname: `/profile/${index}`, query: {ppp:1} }} > Go to user {index}</Link>
+         </div>
+      );
+
+
       return (
           <div className="profile-content">
+
              <h2>Информация о пользователе</h2>
-             {/*<div className="profile-info">{this.props.data.map((item, index) =>*/}
-                  {/*<div key={index}>*/}
-                     {/*<p>{item.id}</p>*/}
-                     {/*<p>{item.title}</p>*/}
-                     {/*<p>{item.body}</p>*/}
-                  {/*</div>*/}
-                {/*)}*/}
-             {/*</div>*/}
+             {users}
+             {/*<div className="profile-info">{this.props.data.map((item, index) =>
+              <div key={index}>
+              <p>{item.id}</p>
+              <p>{item.title}</p>
+              <p>{item.body}</p>
+              </div>
+              )}
+              </div>*/}
           </div>
       );
    }

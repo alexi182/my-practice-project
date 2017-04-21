@@ -1,6 +1,5 @@
 import {Link} from 'react-router';
 import Menu from './menu';
-import './header.css';
 
 export default class Header extends React.Component {
    render() {

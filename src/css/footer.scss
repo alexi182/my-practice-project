@@ -1,0 +1,13 @@
+@import "./global/color";
+
+.footer {
+   background: grey;
+   position: absolute;
+   bottom: 0;
+   height: 60px;
+
+   .text-muted {
+      color: $white;
+   }
+}
+

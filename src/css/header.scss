@@ -1,5 +1,13 @@
+@import './global/color.scss';
+
 a {
    color: white;
+}
+
+a:focus {
+   text-decoration: none;
+   background-color: transparent!important;
+   color: $red!important;
 }
 
 a:hover {
@@ -15,7 +23,7 @@ a:hover {
 .header {
    background-color: #222;
    a{
-      color: #fff;
+      color: $red;
    }
 }
 
