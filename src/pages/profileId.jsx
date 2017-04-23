@@ -10,7 +10,7 @@ export default class ProfileId extends React.Component {
       return (
           <div className="profile-content">
              <h2>Информация о пользователе - {this.props.params.userId}</h2>
-             <Link to="/users/"> Go back</Link>
+             <Link to="/profile">Go back</Link>
           </div>
       );
    }
