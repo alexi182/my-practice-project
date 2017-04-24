@@ -1,6 +1,8 @@
 import Header from '../components/header';
 import Footer from '../components/footer';
+import {autobind} from 'core-decorators';
 
+@autobind()
 export default class Layout extends React.Component {
    constructor(props) {
       super(props)

@@ -4,11 +4,26 @@
   list-style: 0;
   outline: 0; }
 
-#page .inner {
-  width: 1200px;
-  margin: 50px auto; }
+body {
+  background: #dcdcdc; }
 
-a {
-  color: #fff; }
+#page {
+  margin: 0 auto; }
+
+.info {
+  border: 1px solid grey; }
+
+.data-block {
+  background: #F5F5DC; }
+  .data-block__item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 10px; }
+    .data-block__item:first-child {
+      width: 5%; }
+    .data-block__item:nth-of-type(2) {
+      width: 10%; }
+    .data-block__item:last-child {
+      width: 81%; }
 
 /*# sourceMappingURL=common.css.map */
