@@ -25,14 +25,12 @@ export default class Profile extends React.Component {
              </div>
          )}
 
-
       let users = this.state.users.map((user, index) =>
-         <div key={index}>
-            {/*<Link to={ `/profile/${index}` } > Go to user {index}</Link>*/}
-            <Link to={{pathname: `/profile/${index}`, query: {ppp:1} }} key={index}> Go to user {index}</Link>
-         </div>
+          <div key={index}>
+             {/*<Link to={ `/profile/${index}` } > Go to user {index}</Link>*/}
+             <Link to={{pathname: `/profile/${index}`, query: {ppp:1} }} key={index}> Go to user {index}</Link>
+          </div>
       );
-
 
       return (
           <div className="profile-content">
@@ -44,23 +42,14 @@ export default class Profile extends React.Component {
              <div className="info">
                 <h3>Дополнительная информация2</h3>
                 { data.map((item, index) =>
-                     <div className="data-block">
-                        <div className="data-block__item">{item.id}</div>
-                        <div className="data-block__item">{item.title}</div>
-                        <div className="data-block__item">{item.body}</div>
-                     </div>
+                    <div className="data-block">
+                       <div className="data-block__item">{item.id}</div>
+                       <div className="data-block__item">{item.title}</div>
+                       <div className="data-block__item">{item.body}</div>
+                    </div>
                 )}
                 {/*{JSON.stringify(data)};*/}
              </div>
-
-             {/*<div className="profile-info">{this.props.data.map((item, index) =>
-              <div key={index}>
-              <p>{item.id}</p>
-              <p>{item.title}</p>
-              <p>{item.body}</p>
-              </div>
-              )}
-              </div>*/}
           </div>
       );
    }
