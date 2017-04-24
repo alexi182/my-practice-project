@@ -14,7 +14,6 @@ export default class Layout extends React.Component {
       this.props.router.goForward();
    }
 
-
    render() {
       const title = 'Hi!';
 
