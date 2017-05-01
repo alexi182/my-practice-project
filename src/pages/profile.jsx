@@ -50,15 +50,6 @@ export default class Profile extends React.Component {
                 )}
                 {/*{JSON.stringify(data)};*/}
              </div>
-
-             {/*<div className="profile-info">{this.props.data.map((item, index) =>
-              <div key={index}>
-              <p>{item.id}</p>
-              <p>{item.title}</p>
-              <p>{item.body}</p>
-              </div>
-              )}
-              </div>*/}
           </div>
       );
    }

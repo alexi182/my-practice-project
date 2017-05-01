@@ -11,9 +11,9 @@ export default class Menu extends React.Component {
    render() {
       return (
           <ul class="nav navbar-nav navbar-right">
-            {/* <li>
-                <Link to="/profile" class={`menu-link ${this.state.active}`} onClick={this.handleClick}>Profile</Link>
-             </li>*/}
+             {/* <li>
+              <Link to="/profile" class={`menu-link ${this.state.active}`} onClick={this.handleClick}>Profile</Link>
+              </li>*/}
              <li>
                 <Link to="/profile" class="menu-link">Profile</Link>
              </li>

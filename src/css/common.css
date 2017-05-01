@@ -37,4 +37,10 @@ body {
     background: blue;
     color: #fff; }
 
+.selected {
+  background: #4d4dff; }
+
+.profile-content {
+  background: url("../images/avatar.jpg") no-repeat top right; }
+
 /*# sourceMappingURL=common.css.map */

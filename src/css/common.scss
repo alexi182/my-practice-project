@@ -62,3 +62,7 @@ body {
 .selected {
    background: lighten(blue, 15%);
 }
+
+.profile-content {
+   background: url('../images/avatar.jpg') no-repeat top right;
+}
