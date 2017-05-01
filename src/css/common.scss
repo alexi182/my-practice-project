@@ -40,3 +40,25 @@ body {
       }
    }
 }
+
+.table {
+   td {
+      border: 1px solid grey;
+      padding: 5px 10px;
+   }
+}
+
+.service-table {
+   .row {
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+         background: blue;
+         color: #fff;
+      }
+   }
+}
+
+.selected {
+   background: lighten(blue, 15%);
+}

@@ -26,4 +26,15 @@ body {
     .data-block__item:last-child {
       width: 81%; }
 
+.table td {
+  border: 1px solid grey;
+  padding: 5px 10px; }
+
+.service-table .row {
+  cursor: pointer;
+  transition: all 0.3s; }
+  .service-table .row:hover {
+    background: blue;
+    color: #fff; }
+
 /*# sourceMappingURL=common.css.map */
