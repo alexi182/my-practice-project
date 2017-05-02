@@ -21,6 +21,7 @@ export default class Menu extends React.Component {
              <li>
                 <Link to="/bla" class="menu-link">Bla</Link>
              </li>
+     {/*        <p>{this.props.newName}</p>*/}
           </ul>
       );
    }
