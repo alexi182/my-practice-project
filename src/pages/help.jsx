@@ -1,9 +1,9 @@
-import Menu from '../components/menu';
-import "./help.css";
-import {autobind} from "core-decorators";
-
-
+import Search from '../components/search';
+import Service from '../components/service';
+import './help.css';
+import { autobind } from 'core-decorators';
 @autobind()
+
 export default class Help extends React.Component {
    constructor(props) {
       super(props);
@@ -25,6 +25,7 @@ export default class Help extends React.Component {
    }
 
    render() {
+      console.log(this.props);
       return (
           <div className="help-content">
              <h2>Раздел помощи</h2>
@@ -36,32 +37,13 @@ export default class Help extends React.Component {
              </div>
 
              <div>
-                <p>Текст: {this.state.text}</p>
-                <p>Имя: {this.name}</p>
+                <p>Мгновенный поиск: {this.state.text}</p>
+                <input type="text" />
+                <Search/>
+                <Service />
              </div>
-             {/*  <Menu newName={this.name} />*/}
-
-             <div className="price-block">
-                <div className="price-block__item">
-                   <span></span>
-                </div>
-                <div className="price-block__item">
-                   <span></span>
-                </div>
-                <div className="price-block__item">
-                   <span></span>
-                </div>
-                <div className="price-block__item">
-                   <span></span>
-                </div>
-                <div className="price-block__item">
-                   <span></span>
-                </div>
-             </div>
-
           </div>
       );
-      console.log(this.props);
    }
 
 }
