@@ -42,7 +42,7 @@ export default class Profile extends React.Component {
              <div className="info">
                 <h3>Дополнительная информация2</h3>
                 { data.map((item, index) =>
-                    <div className="data-block">
+                    <div className="data-block" key={index}>
                        <div className="data-block__item">{item.id}</div>
                        <div className="data-block__item">{item.title}</div>
                        <div className="data-block__item">{item.body}</div>

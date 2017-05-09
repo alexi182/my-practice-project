@@ -13,13 +13,17 @@ export default class Search extends React.Component {
    }
 
    search(e) {
-      let val = this.refs.search.value.toLowerCase();
-      let people2 = val.length ?
-          this.state.people.filter((p, index) =>
-          p.name.toLowerCase().indexOf(val) !== -1 ||
-          p.surname.toLowerCase().indexOf(val) !== -1 ||
-          p.age.toString().toLowerCase().indexOf(val) !== -1 )
-          : searchData;
+      let val = e.target.value.toLowerCase();
+      let people2;
+
+      if (val.length > 0) {
+         people2 = searchData.filter((p) =>
+         p.name.toLowerCase().indexOf(val) !== -1 ||
+         p.surname.toLowerCase().indexOf(val) !== -1 ||
+         p.age.toString().toLowerCase().indexOf(val) !== -1 )
+      } else {
+         people2 = searchData;
+      }
 
       this.setState({
          people: people2
@@ -30,7 +34,7 @@ export default class Search extends React.Component {
       return (
           <div>
              <h2>Поиск</h2>
-             <input type="text" ref="search" className="form-control" onChange={this.search} />
+             <input type="text" className="form-control" onChange={this.search} />
 
              <table className="table">
                 <thead>
