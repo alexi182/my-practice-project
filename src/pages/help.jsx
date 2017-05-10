@@ -25,7 +25,7 @@ export default class Help extends React.Component {
    }
 
    render() {
-      console.log(this.props);
+      // console.log(this.props);
       return (
           <div className="help-content">
              <h2>Раздел помощи</h2>
@@ -39,7 +39,7 @@ export default class Help extends React.Component {
              <div>
                 <p>Мгновенный поиск: {this.state.text}</p>
                 <input type="text" />
-                <Search/>
+                <Search />
                 <Service />
              </div>
           </div>
