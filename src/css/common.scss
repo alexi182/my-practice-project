@@ -53,16 +53,26 @@ body {
       cursor: pointer;
       transition: all 0.3s;
       &:hover {
-         background: blue;
+         background: lighten(#41c7c2, 10%);
          color: #fff;
       }
    }
 }
 
 .selected {
-   background: lighten(blue, 15%);
+   background: #41c7c2;
 }
 
-.profile-content {
+/*.profile-content {
    background: url('../images/avatar.jpg') no-repeat top right;
+}*/
+
+.content {
+   flex: 1;
+}
+
+.page-inner {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
 }

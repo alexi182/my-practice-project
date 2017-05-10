@@ -14,21 +14,32 @@ export default class Service extends React.Component {
       }
    }
 
-   total(services) {
-      return services.filter(s => s.selected).reduce((prev, current) => { prev += current.price; return prev; },0);
-   }
+   /*total(services) {
+       return services.filter(function(s) {
+         return s.selected
+      }).reduce(function(prev, current) {
+      return prev + current.price}, 0);
+    }*/
 
-   select(service) {
+   select(serviceId) {
       let services = this.state.services.slice(0);
-      let s = services.find((srv, index) => srv.service == service);
+      let s = services.find((srv, index) => srv.service == serviceId);
 
-      if (!s) return;
-      s.selected = !s.selected;
+      if (!s) {
+         return
+      }
+      else {
+         s.selected = !s.selected;
+      }
 
       this.setState({
          services,
          total: this.total(services)
       })
+   }
+
+   total(services) {
+      return services.filter(s => s.selected).reduce((prev, current) => { prev += current.price; return prev; }, 0);
    }
 
    render() {
@@ -44,7 +55,7 @@ export default class Service extends React.Component {
 
                 <tr className="row">
                    <td>Итого</td>
-                   <td>{this.state.total} p.</td>
+                   <td>{this.state.total}  p.</td>
                 </tr>
                 </tbody>
              </table>

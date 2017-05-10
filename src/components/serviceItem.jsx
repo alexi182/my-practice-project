@@ -11,11 +11,16 @@ export default class ServiceItem extends React.Component {
       this.props.select(this.props.service)
    }
 
+   getActive() {
+      return this.props.selected ? 'selected' : ''
+   }
+
    render() {
       return (
-          <tr className={ `row ${this.props.selected ? 'active' : ''}` } onClick={this.clicked} >
+          <tr className={ `row ${this.props.selected ? 'selected' : ''}` } onClick={this.clicked} >
              <td>{this.props.service}</td>
              <td>{this.props.price} p.</td>
           </tr>
       )};
 }
+
