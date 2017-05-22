@@ -66,7 +66,6 @@ export default class Service extends React.Component {
                        <ServiceItem {...s} key={index} />
                    )}
 
-
                 <tr className="row">
                    <td>Итого</td>
                    <td>{this.state.total} p.</td>

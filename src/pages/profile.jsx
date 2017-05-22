@@ -48,7 +48,7 @@ export default class Profile extends React.Component {
                        <div className="data-block__item">{item.body}</div>
                     </div>
                 )}
-                {/*{JSON.stringify(data)};*/}
+                { /*{JSON.stringify(data)};*/ }
              </div>
           </div>
       );
