@@ -1,5 +1,6 @@
 import TodoList from '../components/todoList';
 import {autobind} from 'core-decorators';
+const menu = require('../menu.json');
 
 @autobind()
 export default class TodoPage extends React.Component {
@@ -12,7 +13,8 @@ export default class TodoPage extends React.Component {
             text: 'Text',
             completed: false,
             id: 0
-         }]
+         }],
+         active: 0
       };
    }
 
@@ -20,10 +22,16 @@ export default class TodoPage extends React.Component {
       this.state.notes.push({
          text: val,
          completed: false,
-         id: this.state.notes.length+1
+         id: this.state.notes.length + 1
       });
 
       this.forceUpdate()
+   }
+
+   clicked() {
+      this.setState({
+         active: focused
+      })
    }
 
    selected(id) {
@@ -32,14 +40,18 @@ export default class TodoPage extends React.Component {
          note.completed = !note.completed;
    }
 
+   // total(note) {
+   //    let sum =
+   // }
+
    render() {
       return (
           <div className="todo-list">
              <h2>Заметки</h2>
 
-             <TodoList notes={this.state.notes} add={this.add} />
+             <TodoList notes={this.state.notes} add={this.add} clicked={this.clicked} menu={menu} />
 
           </div>
-      )};
+      )
+   };
 }
-

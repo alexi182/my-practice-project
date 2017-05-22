@@ -7,10 +7,10 @@ export default class TodoList extends React.Component {
       super(props);
    }
 
-   add(e) {
-      if (e.keyCode == 13) {
+   add(e) {   // передача введёного занчения из input , add(e) функция уровня TodoList, которая принимает на вход событие
+      if (e.keyCode == 13) { // по нажатому Enter
          let val = e.target.value;
-         this.props.add(val);
+         this.props.add(val); // add передал из todoPage и вызываем (передаю ссылку на функцию), функция добаляет новую запись
          e.target.value = '';
       }
    }
@@ -26,25 +26,26 @@ export default class TodoList extends React.Component {
              </div>
 
              <div className="todo-block__list">
-               { notes }
+                { notes }
              </div>
              <div className="todo-block__userpanel">
                 <div className="todo-block__userpanel-left col-md-3">
-                   <span>8 items left</span>
+                   <span>{ notes.length } items left</span>
                 </div>
+
                 <div className="todo-block__userpanel-right col-md-9">
                    <ul>
                       <li>
-                         <a href="#">Все</a>
+                         <a href="#" onClick={this.clicked}>Все</a>
                       </li>
                       <li>
-                         <a href="#">Завершённые</a>
+                         <a href="#" onClick={this.clicked}>Завершённые</a>
                       </li>
                       <li>
-                         <a href="#">В работе</a>
+                         <a href="#" onClick={this.clicked}>В работе</a>
                       </li>
                       <li>
-                         <a href="#">Удалить</a>
+                         <a href="#" onClick={this.clicked}>Удалить</a>
                       </li>
                    </ul>
                 </div>

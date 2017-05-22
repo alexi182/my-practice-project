@@ -11,17 +11,19 @@ export default class TodoListItem extends React.Component {
       this.forceUpdate();
    }
 
+   remove() {
+
+   }
+
    render() {
       return (
-
           <div className="todo-block__list-item">
              <input className="col-md-1" type="checkbox" checked={this.props.completed} onChange={this.selected} />
 
              <p className="col-md-9">{this.props.text}</p>
 
-             <button className="col-md-2">Del</button>
+             <button className="col-md-2" onClick={this.remove}>Del</button>
           </div>
       )
    }
-
 }

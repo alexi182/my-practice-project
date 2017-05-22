@@ -28,7 +28,7 @@ export default class ServiceItem extends React.Component {
 
    render() {
       return (
-          <tr className={ `row ${this.active}` } onClick={this.clicked} >
+          <tr className={ `row ${this.active}` } onClick={this.clicked}>
              <td>{this.props.name}</td>
              <td>{this.props.price} p.</td>
           </tr>
