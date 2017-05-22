@@ -1,22 +1,44 @@
 import TodoListItem from './todoListItem';
+import TodoListPanel from './todoListPanel';
 import {autobind} from "core-decorators";
 
 @autobind()
 export default class TodoList extends React.Component {
    constructor(props) {
       super(props);
+
+      this.state = {
+         action: (note) => true,
+         type: 'all'
+      }
    }
 
-   add(e) {   // передача введёного занчения из input , add(e) функция уровня TodoList, которая принимает на вход событие
-      if (e.keyCode == 13) { // по нажатому Enter
-         let val = e.target.value;
-         this.props.add(val); // add передал из todoPage и вызываем (передаю ссылку на функцию), функция добаляет новую запись
+   add(e) {
+      let val = e.target.value;
+      if (e.keyCode == 13 && val) {
+         this.props.add(val);
          e.target.value = '';
       }
    }
 
+   complete(id) {
+      this.props.complete(id);
+   }
+
+   remove(id) {
+      this.props.remove(id);
+   }
+
+   filter(type, action) {
+    this.setState({
+       action, type
+    })
+   }
+
    render() {
-      let notes = this.props.notes.map((note, index) => <TodoListItem {...note} key={index} />
+      let progress = this.props.notes.filter((m)=> !m.completed);
+
+      let notes = this.props.notes.filter(this.state.action).map((note, index) => <TodoListItem {...note} key={index} remove={this.remove} complete={this.complete} />
       );
 
       return (
@@ -26,30 +48,11 @@ export default class TodoList extends React.Component {
              </div>
 
              <div className="todo-block__list">
-                { notes }
+               { notes }
              </div>
-             <div className="todo-block__userpanel">
-                <div className="todo-block__userpanel-left col-md-3">
-                   <span>{ notes.length } items left</span>
-                </div>
 
-                <div className="todo-block__userpanel-right col-md-9">
-                   <ul>
-                      <li>
-                         <a href="#" onClick={this.clicked}>Все</a>
-                      </li>
-                      <li>
-                         <a href="#" onClick={this.clicked}>Завершённые</a>
-                      </li>
-                      <li>
-                         <a href="#" onClick={this.clicked}>В работе</a>
-                      </li>
-                      <li>
-                         <a href="#" onClick={this.clicked}>Удалить</a>
-                      </li>
-                   </ul>
-                </div>
-             </div>
+             <TodoListPanel count={progress.length} filter={this.filter} active={this.state.type} />
+
           </div>
       )
    }

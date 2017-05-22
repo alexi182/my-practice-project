@@ -166,3 +166,16 @@ body {
       clear: both;
    }
 }
+
+.active-link {
+   border: 1px solid rgba(175, 47, 47, 0.2);
+   border-radius: 4px;
+   text-decoration: none;
+   background: transparent!important;
+   color: red!important;
+}
+
+.completed {
+   color: green;
+   font-weight: bold;
+}
