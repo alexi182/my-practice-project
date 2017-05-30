@@ -1,6 +1,8 @@
 import TodoList from '../components/todoList';
 import {autobind} from 'core-decorators';
 
+const cities = require('../cities.json');
+
 @autobind()
 export default class TodoPage extends React.Component {
 
@@ -12,7 +14,8 @@ export default class TodoPage extends React.Component {
             text: 'Text',
             completed: false,
             id: 0
-         }]
+         }],
+         cities: cities
       };
    }
 
@@ -21,7 +24,7 @@ export default class TodoPage extends React.Component {
       notes.push({
          text: val,
          completed: false,
-         id: this.state.notes.length+1
+         id: this.state.notes.length +1
       });
 
       this.setState ({
@@ -34,6 +37,7 @@ export default class TodoPage extends React.Component {
       let note = notes.find((n) => n.id == id);
       if (note) {
          note.completed = !note.completed;
+
          this.setState ({
             notes: notes
          })
@@ -45,26 +49,58 @@ export default class TodoPage extends React.Component {
       if (noteIndex !== -1) {
          let notes = this.state.notes.slice();
          notes.splice(noteIndex, 1);
+
          this.setState ({
             notes: notes
          })
       }
    }
 
-   /*filter(action) {
-      let notes = this.state.notes.filter(action);
+   sort() {
+      let cities = this.state.cities;
+      cities.sort();
 
-      this.setState ({
-         notes: notes
+      this.setState({
+         cities
       })
-   }*/
+   }
+
+   /*filter(action) {
+    let notes = this.state.notes.filter(action);
+
+    this.setState ({
+    notes: notes
+    })
+    }*/
 
    render() {
+      let cities = this.state.cities;
+
       return (
           <div className="todo-list">
              <h2>Заметки</h2>
 
              <TodoList notes={this.state.notes} add={this.add} complete={this.complete} remove={this.remove} />
+
+             <div className="city-block">
+                <table>
+                   <thead>
+                   <tr>
+                      <th onClick={this.sort}>Индекс</th>
+                      <th onClick={this.sort}>Город</th>
+                   </tr>
+                   </thead>
+
+                   {cities.map((item, index) =>
+                       <tbody key={index}>
+                       <tr>
+                          <td>{item.id}</td>
+                          <td>{item.city}</td>
+                       </tr>
+                       </tbody>
+                   )}
+                </table>
+             </div>
           </div>
       )};
 }
