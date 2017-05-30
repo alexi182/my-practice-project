@@ -12,7 +12,8 @@ export default class TodoPage extends React.Component {
             text: 'Text',
             completed: false,
             id: 0
-         }]
+         }],
+         num: 10
       };
    }
 
@@ -40,6 +41,14 @@ export default class TodoPage extends React.Component {
       }
    }
 
+   count() {
+      let result = this.state.num * 2;
+
+      this.setState ({
+         num: result
+      })
+   }
+
    remove(id) {
       let noteIndex = this.state.notes.findIndex((item) => item.id == id);
       if (noteIndex !== -1) {
@@ -65,6 +74,8 @@ export default class TodoPage extends React.Component {
              <h2>Заметки</h2>
 
              <TodoList notes={this.state.notes} add={this.add} complete={this.complete} remove={this.remove} />
+
+             <button onClick={this.count}>Нажми меня {this.state.num}</button>
           </div>
       )};
 }
