@@ -36,7 +36,7 @@ export default class TodoList extends React.Component {
    }
 
    render() {
-      let progress = this.props.notes.filter((m)=> !m.completed);
+      let progress = this.props.notes.filter((m) => !m.completed);
 
       let notes = this.props.notes.filter(this.state.action).map((note, index) => <TodoListItem {...note} key={index} remove={this.remove} complete={this.complete} />
       );

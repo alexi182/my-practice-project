@@ -50,12 +50,11 @@ export default class Service extends React.Component {
    }
 
    total(services2) {
-      return services2.filter(s => s.selected).reduce((prev, current) => prev + current.price,0);
+      return services2.filter(s => s.selected).reduce((prev, current) => prev + current.price, 0);
    }
 
    render() {
       return (
-
           <div>
              <TestComp message="Привет" />
              <h2>Услуги</h2>
@@ -65,7 +64,6 @@ export default class Service extends React.Component {
                    this.state.services.map((s, index) =>
                        <ServiceItem {...s} key={index} />
                    )}
-
                 <tr className="row">
                    <td>Итого</td>
                    <td>{this.state.total} p.</td>

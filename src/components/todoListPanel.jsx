@@ -1,11 +1,30 @@
 import {autobind} from 'core-decorators';
 
+const items = [
+   {
+      text: 'все',
+      type: 'all'
+   },
+   {
+      text: 'завершённые',
+      type: 'completed'
+   },
+   {
+      text: 'в работе',
+      type: 'progress'
+   },
+   {
+      text: 'удалённые',
+      type: 'remove'
+   },
+];
+
 @autobind()
 export default class TodoListPanel extends React.Component {
    constructor(props) {
       super(props);
 
-      this.items = [
+/*      this.items = [
          {
             text: 'все',
             type: 'all'
@@ -22,7 +41,7 @@ export default class TodoListPanel extends React.Component {
             text: 'удалённые',
             type: 'remove'
          },
-      ]
+      ]*/
    }
 
    action(e, item) {
@@ -47,7 +66,7 @@ export default class TodoListPanel extends React.Component {
              </div>
              <div className="todo-block__userpanel-right col-md-9">
                 <ul>
-                   {this.items.map((item, index) =>
+                   {items.map((item, index) =>
                        <li key={index}>
                           <a href="#" onClick={(e) => {this.action(e, item)}} className={this.props.active == item.type ? 'active-link' : ''}>{item.text}</a>
                        </li>
