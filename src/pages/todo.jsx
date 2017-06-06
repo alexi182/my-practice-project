@@ -58,7 +58,7 @@ export default class TodoPage extends React.Component {
 
    sort() {
       let cities = this.state.cities;
-      cities.sort('city');
+      cities.sort();
 
       this.setState({
          cities

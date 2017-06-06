@@ -11,10 +11,8 @@ a:hover {
   background: grey !important; }
 
 .active {
-  color: #fff;
-  /*  background: grey;*/ }
-  .active td {
-    background: #5cb85c !important; }
+  color: blue;
+  background: grey; }
 
 .header {
   background-color: #222; }
